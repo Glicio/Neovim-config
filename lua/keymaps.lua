@@ -33,4 +33,7 @@ map("n", "K", function()
   vim.lsp.buf.hover()
 end)
 
+-- misc
 map("n", "<esc>", ":noh<CR>")
+
+
