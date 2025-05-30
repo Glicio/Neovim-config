@@ -18,6 +18,9 @@ map("n", "<C-l>", ":wincmd l<CR>")
 map("n", "<C-j>", ":wincmd j<CR>")
 map("n", "<C-k>", ":wincmd k<CR>")
 
+--buffer navigation
+map("n", "H", ":bp<CR>")
+map("n", "L", ":bn<CR>")
 -- neo-tree
 map("n", "<leader>e", ":Neotree toggle<CR>")
 
