@@ -35,3 +35,25 @@ vim.opt.incsearch = true
 
 -- set colors
 vim.opt.termguicolors = true
+
+-- set cursorline
+vim.opt.cursorline = true
+
+-- set scrolloff
+vim.opt.scrolloff = 8
+
+-- set foldmethod
+vim.opt.foldmethod = "indent"
+
+-- set foldlevel
+vim.opt.foldlevel = 99
+
+-- set foldcolumn
+vim.opt.foldcolumn = "0"
+
+-- set colorcolumn
+vim.opt.colorcolumn = "80"
+
+-- disable wrapping
+vim.opt.wrap = false
+--#region
