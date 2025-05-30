@@ -5,7 +5,7 @@ local servers = {
 	"bashls",
 	"jsonls",
 	"vscode-eslint-language-server",
-	"emmet-ls",
+	"emmet-language-server",
 	"yamlls",
 	"eslint",
 	"tailwindcss-language-server",
