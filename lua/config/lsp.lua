@@ -9,6 +9,7 @@ local servers = {
 	"yamlls",
 	"eslint",
 	"tailwindcss-language-server",
+	"gopls",
 }
 
 for _, server in ipairs(servers) do
