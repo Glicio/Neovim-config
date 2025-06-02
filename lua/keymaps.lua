@@ -21,6 +21,8 @@ map("n", "<C-k>", ":wincmd k<CR>")
 --buffer navigation
 map("n", "L", ":BufferNext<CR>")
 map("n", "H", ":BufferPrevious<CR>")
+map("n", "<leader>bo", ":BufferCloseAllButCurrent<CR>")
+map("n", "<leader>bd", ":BufferClose<CR>")
 -- neo-tree
 map("n", "<leader>e", ":Neotree toggle<CR>")
 
