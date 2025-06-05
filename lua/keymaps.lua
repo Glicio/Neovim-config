@@ -27,7 +27,37 @@ map("n", "<leader>bd", ":BufferClose<CR>")
 map("n", "<leader>e", ":Neotree toggle<CR>")
 
 -- neoformat
-map("n", "<F3>", ":Neoformat<CR>")
+map("n", "<F3>", function()
+	--get current file type 
+	local filetype = vim.bo.filetype
+	local jsTypes = {
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"tsx",
+		"jsx",
+		"json",
+		"html",
+		"css",
+		"less",
+		"scss",
+		"vue",
+	}
+
+	for _, type in ipairs(jsTypes) do
+		if filetype == type then
+			vim.notify("Formatting with prettierd")
+			vim.cmd("Neoformat prettierd")
+			return
+		end
+	end
+
+	vim.notify("Formatting with neoformat")
+	vim.cmd("Neoformat")
+
+	
+end)
 
 -- lsp
 map("n", "K", function()
