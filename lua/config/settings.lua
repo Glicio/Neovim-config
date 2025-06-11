@@ -4,9 +4,9 @@ vim.opt.clipboard = "unnamedplus"
 
 -- use tab for indentation
 vim.opt.smarttab = true
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
 
 -- set number of columns to show
 vim.opt.number = true
