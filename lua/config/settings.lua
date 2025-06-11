@@ -4,13 +4,21 @@ vim.opt.clipboard = "unnamedplus"
 
 -- use tab for indentation
 vim.opt.smarttab = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
 
 -- set number of columns to show
 vim.opt.number = true
 vim.opt.numberwidth = 4
+
+-- no backup files
+vim.opt.swapfile = false
+vim.opt.backup = false
+
+-- undo 
+vim.opt.undofile = true
+vim.opt.undodir = os.getenv("HOME") .. "/.nvim/undodir"
 
 -- set relative number
 vim.opt.relativenumber = true
@@ -29,8 +37,6 @@ vim.opt.smartcase = true
 
 -- set hlsearch
 vim.opt.hlsearch = true
-
--- set incsearch
 vim.opt.incsearch = true
 
 -- set colors
