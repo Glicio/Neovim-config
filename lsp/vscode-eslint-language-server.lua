@@ -1,37 +1,4 @@
 local insert_package_json = require("utils.insert_package_json")
---- @brief
----
---- https://github.com/hrsh7th/vscode-langservers-extracted
----
---- `vscode-eslint-language-server` is a linting engine for JavaScript / Typescript.
---- It can be installed via `npm`:
----
---- ```sh
---- npm i -g vscode-langservers-extracted
---- ```
----
---- The default `on_attach` config provides the `LspEslintFixAll` command that can be used to format a document on save:
---- ```lua
---- local base_on_attach = vim.lsp.config.eslint.on_attach
---- vim.lsp.config("eslint", {
----   on_attach = function(client, bufnr)
----     if not base_on_attach then return end
----
----     base_on_attach(client, bufnr)
----     vim.api.nvim_create_autocmd("BufWritePre", {
----       buffer = bufnr,
----       command = "LspEslintFixAll",
----     })
----   end,
---- })
---- ```
----
---- See [vscode-eslint](https://github.com/microsoft/vscode-eslint/blob/55871979d7af184bf09af491b6ea35ebd56822cf/server/src/eslintServer.ts#L216-L229) for configuration options.
----
---- Messages handled in lspconfig: `eslint/openDoc`, `eslint/confirmESLintExecution`, `eslint/probeFailed`, `eslint/noLibrary`
----
---- Additional messages you can handle: `eslint/noConfig`
-
 local lsp = vim.lsp
 
 return {
@@ -49,7 +16,7 @@ return {
   },
   workspace_required = true,
   on_attach = function(client)
-    vim.api.nvim_buf_create_user_command(0, 'LspEslintFixAll', function()
+    vim.api.nvim_buf_create_user_command(0, 'EsFix', function()
       local bufnr = vim.api.nvim_get_current_buf()
 
       client:exec_cmd({
@@ -67,18 +34,19 @@ return {
   -- https://eslint.org/docs/user-guide/configuring/configuration-files#configuration-file-formats
   root_dir = function(bufnr, on_dir)
     local root_file_patterns = {
-      '.eslintrc',
-      '.eslintrc.js',
-      '.eslintrc.cjs',
-      '.eslintrc.yaml',
-      '.eslintrc.yml',
-      '.eslintrc.json',
-      'eslint.config.js',
-      'eslint.config.mjs',
-      'eslint.config.cjs',
-      'eslint.config.ts',
-      'eslint.config.mts',
-      'eslint.config.cts',
+			'.git',
+      -- '.eslintrc',
+      -- '.eslintrc.js',
+      -- '.eslintrc.cjs',
+      -- '.eslintrc.yaml',
+      -- '.eslintrc.yml',
+      -- '.eslintrc.json',
+      -- 'eslint.config.js',
+      -- 'eslint.config.mjs',
+      -- 'eslint.config.cjs',
+      -- 'eslint.config.ts',
+      -- 'eslint.config.mts',
+      -- 'eslint.config.cts',
     }
 
     local fname = vim.api.nvim_buf_get_name(bufnr)
