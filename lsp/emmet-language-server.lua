@@ -14,5 +14,5 @@ return {
 		"scss",
 		"vue",
 	},
-  root_markers = {".git"},
+  root_markers = {"package.json", "tsconfig.json"},
 }
